@@ -9,11 +9,7 @@ body {
 
 .container {
 
-    /* flex-direction: row; */
-
     width: 1280px;
-    /* flex-direction: column; */
-
     margin: 0 auto;
 }
 
@@ -29,7 +25,6 @@ body {
 .banner-text {
     color: white;
     width: 50%;
-    /* height: 30px; */
     padding-left: 100px;
     padding-top: 30px;
     padding-bottom: 25px;
@@ -52,6 +47,12 @@ body {
     background-color: #d13a2f;
     padding: 13px 29px;
     border-radius: 5px;
+    transition: padding 2s, font-size 2s;
+}
+
+.banner-text a:hover {
+    padding: 17px 35px;
+    font-size: 1.6em;
 }
 
 .fa-light {
@@ -105,9 +106,11 @@ main {
     text-decoration: none;
     color: black;
     font-size: 20px;
+
+
 }
 
-/* .match-details {} */
+
 
 .link-button {
     padding: 10px;
@@ -133,7 +136,6 @@ section {
 }
 
 .blog-area {
-    /* width: 300px; */
     border: 1px solid #ddd;
     border-radius: 10px;
 }
@@ -172,9 +174,27 @@ section {
     margin-right: 20px;
 }
 
+.anchor-link {
+    text-align: center;
+    padding-bottom: 100px;
+
+}
+
+.anchor-link a {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    background-color: #d13a2f;
+    padding: 13px 29px;
+    border-radius: 5px;
+
+}
+
 footer {
     width: 100%;
     background-color: #161616;
+
 }
 
 footer .goal {
@@ -182,8 +202,6 @@ footer .goal {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 20px;
-
-    /* flex-direction: column; */
 
 }
 
@@ -210,23 +228,27 @@ footer hr {
     color: rgb(0, 140, 255);
 }
 
-/*--mobile devices --*/
-@media only screen and (max-width:1312px) {
+/*--desktop devices --*/
+@media only screen and (max-width:1100px) {
     .container {
         width: 95%;
     }
 
     #blog-wrap {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .anchor-link {
+        display: none;
     }
 
 }
 
+/*--tablet devices--*/
 @media only screen and (max-width:992px) {
     .banner-text {
         color: white;
         width: 50%;
-        /* height: 30px; */
         padding-left: 5%;
         padding-top: 30px;
         padding-bottom: 25px;
@@ -264,14 +286,25 @@ footer hr {
         flex-direction: row;
         justify-content: space-around;
     }
+
+
+    #blog-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .anchor-link {
+        display: block;
+    }
+
 }
 
+/*--mobile devices--*/
 @media only screen and (max-width:668px) {
 
     .banner-area {
         flex-direction: column;
         justify-content: flex-start;
-        ALIGN-ITEMS: center;
+        align-items: center;
     }
 
     .banner-area h1 {
@@ -312,6 +345,11 @@ footer hr {
         margin: 0 auto;
         background: #fff;
 
+    }
+
+    .anchor-link {
+
+        display: none;
     }
 
     .footer-link a {
